@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  background-color: black;
+  display: flex;
+  flex-direction: column; /* 修改为纵向布局 */
+  align-items: flex-end;
+  height: 100vh;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  transition: background-image 3s;
+}
+
+#navbar {
+  position: fixed; /* 将导航栏设置为固定定位 */
+  top: 0; /* 顶部对齐 */
+  right: 5px;
+  margin: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  z-index: 1; /* 提升导航栏的层级，确保在图片上方 */
+}
+
+.navButton {
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  background: none;
+  font-family: 'Helvetica', sans-serif; /* 添加字体属性 */
+}
+
+#imageContainer {
+  margin-top: 150px;
+  width: 100%;
+  position: relative;
+  height: auto; /* 设置为自适应高度 */
+  margin-bottom: 20px; /* 底部边距，确保底部内容可见 */
+}
+
+#imageContainer img {
+  width: 100%;
+  height: auto;
+}
+
+#titleContainer {
+  position: fixed; /* 将标题栏设置为固定定位 */
+  top: 0; /* 顶部对齐 */
+  left: 5px;
+  margin: 20px;
+  z-index: 1; /* 提升标题栏的层级，确保在图片上方 */
+}
+
+h3 {
+  font-size: 16px;
+  color: white;
+  font-family: 'Helvetica', sans-serif; /* 添加字体属性 */
+}
+
+#startButton {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  padding: 40px 80px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  color: red;
+  background-color: blue;
+  text-transform: uppercase;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 49%, 100% {
+    opacity: 1;
+  }
+  50%, 99% {
+    opacity: 0;
+  }
+}
+

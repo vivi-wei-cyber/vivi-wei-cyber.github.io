@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100vh;
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    transition: background-image 3s;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    right: 5px;
+    margin: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    z-index: 1;
+}
+
+.navButton {
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    background: none;
+    font-family: 'Helvetica', sans-serif; /* 添加字体属性 */
+}
+
+
+#titleContainer {
+    position: fixed;
+    top: 0;
+    left: 5px;
+    margin: 20px;
+    z-index: 1;
+}
+
+h3 {
+    font-size: 16px;
+    color: white;
+    font-family: 'Helvetica', sans-serif; /* 添加字体属性 */
+}
+
+@keyframes blink {
+    0%, 49%, 100% {
+        opacity: 1;
+    }
+    50%, 99% {
+        opacity: 0;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    margin-top: 200px;
+    margin-left: 180px;
+    margin-right: 180px;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+.column1 {
+    width: 400px;
+    background-color: #000000;
+}
+
+.column2 {
+    width: 800px;
+    background-color: #000000;
+}
+
+p {
+    margin: 10px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+p {
+    font-family: 'Helvetica', sans-serif;
+    color: white;
+    text-align: left;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    display: block;
+}

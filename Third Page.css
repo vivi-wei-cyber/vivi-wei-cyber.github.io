@@ -1,0 +1,155 @@
+/* Third Page.css */
+
+body {
+    margin: 0;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100vh;
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    transition: background-image 3s;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    right: 5px;
+    margin: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    z-index: 1;
+}
+
+.navButton {
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    background: none;
+    font-family: 'Helvetica', sans-serif;
+}
+
+#imageContainer {
+    margin-top: 150px;
+    position: relative;
+    height: auto;
+    margin-bottom: 20px;
+    cursor: pointer;
+    /* 如果不需要撑满整个屏幕，可以删除下面这行 */
+    /* width: 100%; */
+}
+
+#titleContainer {
+    position: fixed;
+    top: 0;
+    left: 5px;
+    margin: 20px;
+    z-index: 1;
+}
+
+h3 {
+    font-size: 16px;
+    color: white;
+    font-family: 'Helvetica', sans-serif;
+}
+
+@keyframes blink {
+    0%, 49%, 100% {
+        opacity: 1;
+    }
+    50%, 99% {
+        opacity: 0;
+    }
+}
+
+#detailButton {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    background: none;
+    font-family: 'Helvetica', sans-serif;
+}
+
+#videoContainer {
+    width: 960px; /* 设置视频宽度为960像素 */
+    height: 540px; /* 设置视频高度为540像素 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 450px;
+}
+
+h6 {
+    font-family: 'Helvetica', sans-serif;
+    width: 960px;
+    color: white;
+    text-align: left;
+    margin: 20px auto; /* Add this line to center the h6 horizontally */
+    margin-top: 800px;
+}
+
+
+body {
+    display: flex;
+    margin: 0;
+}
+
+.column-container {
+    display: flex;
+    margin: 40px; /* 左右边距 */
+    margin-top: 0px; /* 左右边距 */
+}
+
+.column {
+    flex: 1;
+    padding: 0 20px; /* 修改 padding 为 0 20px，使上下保持原样，左右添加 20px 边距 */
+    box-sizing: border-box;
+    margin-top: 15px; /* 整个栏上移 20px */
+}
+
+.column:not(:last-child) {
+    margin-right: 2.5px; /* 两个 column 之间的间距 */
+}
+
+.column:first-child {
+    margin-left: 200px; /* 左边的栏距离左边缘200px */
+}
+
+.column:last-child {
+    margin-right: 200px; /* 右边的栏距离右边缘200px */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+h5, p {
+    font-family: 'Helvetica', sans-serif;
+    color: white;
+    text-align: left;
+}
+
+
+
+
+
+
+
+

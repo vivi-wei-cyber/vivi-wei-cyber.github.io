@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100vh;
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    transition: background-image 3s;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    right: 5px;
+    margin: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    z-index: 1;
+}
+
+.navButton {
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    background: none;
+    font-family: 'Helvetica', sans-serif; /* 添加字体属性 */
+}
+
+#imageContainer {
+    margin-top: 150px;
+    width: 100%;
+    position: relative;
+    height: auto;
+    margin-bottom: 20px;
+    cursor: pointer; /* 添加光标样式，表示可以点击 */
+}
+
+#imageContainer img {
+    width: auto; /* 让图片保持原始宽度 */
+    max-width: 100%; /* 限制图片最大宽度为容器宽度 */
+    height: auto;
+    display: block; /* 使图像居中 */
+    margin: 0 auto; /* 图片水平居中 */
+    padding: 0 100px; /* 增加左右边界 */
+}
+
+#titleContainer {
+    position: fixed;
+    top: 0;
+    left: 5px;
+    margin: 20px;
+    z-index: 1;
+}
+
+h3 {
+    font-size: 16px;
+    color: white;
+    font-family: 'Helvetica', sans-serif; /* 添加字体属性 */
+}
+
+@keyframes blink {
+    0%, 49%, 100% {
+        opacity: 1;
+    }
+    50%, 99% {
+        opacity: 0;
+    }
+}
+
+#detailButton {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    background: none;
+    font-family: 'Helvetica', sans-serif;
+}
+
+
+  
+  
