@@ -1,31 +1,234 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html> <!-- This is an html code document -->
+<html lang="en"> <!--The language of this document  type is English -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="First Page.css">
-  <script src="First Page.js" defer></script>
-</head>
+    <meta charset="UTF-8"><!--This code tag is to set the character encoding. This tag tells the browser to use UTF-8 encoding to interpret the text of the web page. This is important to ensure that the various characters in a web page, including characters from different languages, are displayed correctly.-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--In HTML, the <meta> tag is used to provide metadata about a web page, and this meta tag is used to ensure that the latest version of the rendering engine is used in Internet Explorer to improve compatibility and performance.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--This meta tag is used to ensure that a web page is displayed at the right width on a mobile device, thus enabling a responsive layout. This is important for the user experience on mobile devices as it ensures that the page renders correctly on small screens and that the user does not need to manually zoom or scroll.-->
+    <title>Vivi's javascript assignment of creative technology</title> <!--This is a title of website-->
+    <style>/*From here it's all about the css code*/
+        body {
+            background-color: black; /*The background of this page is black*/
+            display: flex; /*Flex layout is a CSS3 flexible box model for designing complex layout structures.*/
+            flex-direction: column;/*This is a vertical and flexible box model */
+            align-items: center; /*Aligns each child element in the box vertically.*/
+            justify-content: center;/*Aligns child elements in the box in the major axis direction.*/
+            height: 100vh; /*Element height fills the entire window of the page*/
+            margin: 300px 0 0 0; /*Flex The distance from the top of the page edge is 300px, the distance in all other directions is 0.*/
+        }
 
-<body>
-  <div id="navbar">
-    <button class="navButton" id="navButton1" onclick="navigate('about.html')">ABOUT ASSIGNMENT</button>
-    <button class="navButton" id="navButton2" onclick="navigate('home.html')">HOME</button>
-    <button class="navButton" id="navButton3" onclick="navigate('contact.html')">CONTACT ARTIST</button>
-  </div>
-  <div id="imageContainer">
-    <img src="https://payload.cargocollective.com/1/3/119931/13396766/Ralph-Wiggum-s-Twin-Peaks-Dream_1200.jpg" alt="Background Image">
-  </div>
-  <div id="titleContainer">
-    <h3 id="title">VIVI CREATIVE TECHNOLOGY WEB ASSIGNMENT</h3>
-  </div>
-  <button id="startButton" onclick="navigate('Second Page.html')">Start</button>
+        .title-bar { /*Now start setting up the CSS for the title bar*/
+            padding: 10px; /*Set the inner margin of the title bar to 10 pixels*/
+            position: fixed; /* Fix the title bar in the viewport */
+            top: 0; /* Distance from upper edge of viewport is 0 */
+            left: 0;/* Distance from left edge of viewport is 0 */
+            width: 100%;/* Set the width of the title bar to 100% */
+            
+        }
+
+        .title-bar h2 {
+            color: white; /* Set title text color to white */
+            padding: 5px 10px; /* Set the inner margin of the title text to (5 pixels top and bottom, 10 pixels left and right) */
+        }
+
+        nav {
+           display: flex; /* Using Flex layout */
+           justify-content: flex-end; /* Place navigation items to the right of the parent container */
+           padding: 10px; /* Set inner margin to 10px */
+           position: fixed;  /* Fix the title bar in the viewport */
+           width: 100%;  /* The width of the navigation bar fills the entire viewport */
+           top: 20px; /* 20px from the upper edge of the viewport */
+           right: 0px; /* 0px from the right edge of the viewport, fixing the navigation bar in the upper right corner */
+        }
+
+        button {
+            background-color: yellow;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px; /* Added to make the buttons rounded */
+            padding: 8px 15px; /* Adjusted padding for better appearance */
+            cursor: pointer;
+        }
+
+        section {
+            margin-top: 100px; /* Adjusted to accommodate the title bar */
+        }/*css is end */
+    </style>
+</head>
+<body><!--Start adding navigation bar-->
+    <div class="title-bar"> <!--Creates a title bar. div usually combines other identical elements together. class represents a collection class of identical elements.-->
+        <h2>Help Kitty Choose A Meal</h2><!--This is my title contents-->
+    </div>
+
+    <nav><!--element is used to define a navigation bar or menu.-->
+        <button role="button" id="initTrigger">Click!</button> <!--Create a button called Click with a unique API ID.-->
+        <button role="button" id="listByLetterTrigger">List Cocktails</button><!--Create a button called List Cocktails with a unique API ID.-->
+        <button role="button" id="seafoodTrigger">Seafood</button><!--Create a button called Seafood with a unique API ID.-->
+        <a href="https://www.google.com" target="_blank"><!--This is a button with a link that specifies a unique link.-->
+            <button role="button">Search</button><!--This button is called Search-->
+        </a>
+        <!--This navigation bar or menu is end-->
+    </nav>
+    <section id="cocktailSection"></section><!--Here a section is defined who has an explicit API ID. this section will be dynamically populated based on JavaScript.-->
+    <section id="catImageSection"></section><!--Here a section is defined who has an explicit API ID. this section will be dynamically populated based on JavaScript.-->
+    <img src="1.png" alt="Website Flowchart" style="width: 100%; max-width: 800px; margin-top: 20px;">
+
+    <script>
+        const triggerButton = document.getElementById('initTrigger');//This line of JavaScript code uses the document.getElementById method to get the element on the page with the ID 'initTrigger' and stores a reference to it in the constant triggerButton.
+        const listByLetterButton = document.getElementById('listByLetterTrigger'); //This line of JavaScript code uses the document.getElementById method to get the element on the page with the ID listByLetterTrigger and stores a reference to it in the constant listByLetterButton.
+        const seafoodButton = document.getElementById('seafoodTrigger'); //This line of JavaScript code uses the document.getElementById method to get the element on the page with the ID seafoodTrigger and stores a reference to it in the constant seafoodButton.
+        const cocktailSection = document.getElementById('cocktailSection');//This line of JavaScript code uses the document.getElementById method to get the element on the page with the ID cocktailSection and stores a reference to it in the constant cocktailSection.
+        const catImageSection = document.getElementById('catImageSection');//This line of JavaScript code uses the 'catImageSection' method to get the element on the page with the ID cocktailSection and stores a reference to it in the constant catImageSection.
+
+        const randomCocktailURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";//This line of code declares a constant randomCocktailURL, which stores the URL of an API for getting random cocktail data.
+        const catAPIURL = "https://api.thecatapi.com/v1/images/search";//This line of code declares a constant catAPIURL, which stores the URL of an API for getting randomized cat data.
+        const cocktailsByLetterURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a";//This line of code declares a constant cocktailsByLetterURL, which stores the URL of an API for getting cocktail list data.
+        const seafoodURL = "https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian";//This line of code declares the constant seafoodURL, which stores the URL of an API for fetching seafood recipe data.
+        const randomMealURL = "https://www.themealdb.com/api/json/v1/1/random.php"; //This line of code declares a constant randomMealURL, which stores the URL of an API for fetching recipe data.
+
+        const fetchCocktailData = () => {
+            fetch(randomCocktailURL)//Asynchronous request using fetch function to get data from randomCocktailURL
+                .then(response => response.json())// Convert the response object to JSON format
+                .then(payload => appendCocktailData(payload));//Passing the fetched data to the appendCocktailData function
+        }
+
+        const appendCocktailData = (data) => {
+            console.log(data);//This code defines a function, appendCocktailData, that accepts one argument, data.The main purpose of the function is to output the incoming data to the browser's console, using console.log(data).
+
+            const firstDrink = data.drinks[0];// Getting the first cocktail from the data
+            const drinkName = firstDrink.strDrink;//Extract the name of the cocktail
+            const drinkImg = firstDrink.strDrinkThumb; //Extract cocktail image URL
+
+            const nameHeader = document.createElement('h3');//Create an h3 element
+            nameHeader.innerText = "We had " + drinkName;//Sets the text content of the h3 element，function is "we have "+random name
+            cocktailSection.appendChild(nameHeader);//Add the h3 element to the cocktailSection area of the page
+
+            const image = document.createElement('img');//create a image element 
+            image.src = drinkImg;//Sets the image source of the img element
+            image.alt = "image of " + drinkName;//Set the alt attribute of the img element
+            cocktailSection.appendChild(image); //Add the img element to the cocktailSection area of the page.
+
+            fetchCatImageData();
+
+            // Add h6 element below the cat image
+            const h6Element = document.createElement('p'); //Creates a new <P> element.
+            h6Element.innerText = 'Build a similar system in the digital realm: the basic workflow of the World Wide Web is what we have in the digital realm with Rube Goldberg. user (cell phone/computer/ipad) enters the URL (http:// or https://) -> Web uses (DNS) to get the IP address ->Web sends HTTP request to server for information (file/image/style/script) ->Server responds with content of Web resource (HTTP) ->Web receives HTML and renders interface based on DOM model -> In the process of rendering, render CSS and jvavscript (coding into visual interface) -> Get a new round of loop from hyperlinks.Types of data that can be transferred: Text (HTML, SMTP) / File (PDF/JPEG/TTF/MP3/MP4/MOV) Application (SQL/FTP/SSH) Streaming (User Datagram Protocol) JSON /XMC/Instant Messaging Data (SLACK/IG) HTML (JAVASCRIPT/CSS), all of which are transferred in the form of a byte stream.IFTTT/ZAPIER/MICROSOFT POWER AUTOMATE/WEBHOOKS/API/CHATOPS/SERVERCES These servers can be connected to each other in series, a transfer of information to reach the users purpose, to facilitate the users life, and make work more efficient.Trigger is a put in instruction to the program, the system through a series of operations eventually output a final result.Trigger: the user performs the operation request -> operation: the trigger causes an automated workflow -> intermediate steps: the workflow performs a series of intermediate steps (validation/processing/storage) ->Final result: the users request is completed and a success alert notification is received.';//This is a content about my assignement describtion
+            h6Element.style.fontFamily = 'Helvetica';//font is Helvetica.
+            h6Element.style.color = 'white';//colour is white.
+            h6Element.style.width = '800px';//The width of the paragraph is 800px
+            h6Element.style.lineHeight = '2'; //Paragraphs are spaced twice as far apart
+            h6Element.style.margin = 'auto'; //This code makes the paragraph center-aligned in the page
+            catImageSection.appendChild(h6Element);//Add the <p> element to the page section catImageSection to be displayed underneath the cat's image
+            
+            const newParagraph = document.createElement('p');//Creates a new <P> element.
+            newParagraph.innerText = 'This site is a site that gives cats and kittens random lunch choices. When clicking on CLICK, Cat and his random drink appear at the same time. When clicking on Cats picture, his random lunch is shown; when clicking on seafood, Cats random seafood food is shown. When clicking on search engine, the page jumps to Google search engine.';
+            newParagraph.style.fontFamily = 'Helvetica';//font is Helvetica.
+            newParagraph.style.color = 'white';//colour is white.
+            newParagraph.style.width = '800px';//The width of the paragraph is 800px
+            newParagraph.style.lineHeight = '2';//Paragraphs are spaced twice as far apart
+            newParagraph.style.margin = 'auto'; //This code makes the paragraph center-aligned in the page
+            catImageSection.appendChild(newParagraph);//Add the <p> element to the page section catImageSection to be displayed underneath the newParagraph
+            
+        }
+
+        const fetchCatImageData = () => { // Define a function called fetchCatImageData.
+            fetch(catAPIURL)//// Use the fetch function to initiate a web request for the resource specified by catAPIURL.
+                .then(response => response.json())//Processes the returned response object, parsing it into JSON data
+                .then(json => appendCatImageData(json));// Pass the parsed JSON data to the appendCatImageData function for processing.
+        }
+
+        const appendCatImageData = (data) => {// Define a function called appendCatImageData that takes one argument, data.
+            console.log(data); //Print data on the console.
+
+            const catImgURL = data[0].url;// Get the URL of the cat image from the data
+
+            const catImgHeader = document.createElement('h3');// Create a <h3> element
+            catImgHeader.innerText = "Here's a cat image!";//Sets the text content of the <h3> element
+            catImageSection.appendChild(catImgHeader);//Add the <h3> element to the catImageSection area.
+
+            const catImage = document.createElement('img');//Create a <img> element
+            catImage.src = catImgURL; //Sets the src attribute of the <img> element, which is the URL of the image
+            catImage.alt = "Cute cat image"; // Set the alt attribute of the <img> element, i.e. the alternative text for the image.
+            catImageSection.appendChild(catImage);//Adds the <img> element to the catImageSection area.
+            catImage.addEventListener("click", fetchRandomMeal);// Add click event for fetching a random meal when clicking the cat image
+        }
+
+        const listByLetter = () => { // Define a function called listByLetter, using arrow function syntax.
+            fetch(cocktailsByLetterURL)// Use the fetch API to make a web request for the data corresponding to cocktailsByLetterURL.
+                .then(response => response.json())//Processes the returned response object, parsing it into JSON data
+                .then(data => displayCocktailsByLetter(data));//To process the parsed data, call the displayCocktailsByLetter function
+        }
+
+        const displayCocktailsByLetter = (data) => { // Define a function called displayCocktailsByLetter that uses arrow function syntax and takes one argument, data.
+            const cocktails = data.drinks;// Get the drinks attribute from the incoming data, which contains the alphabetized cocktail data
+            if (cocktails) {//Check for cocktails to prevent empty data from causing errors.
+                cocktails.forEach(cocktail => {// Iterate over each element of the cocktails array, each representing a cocktail.
+                    const name = cocktail.strDrink;// Get the name of the cocktail
+                    const imgURL = cocktail.strDrinkThumb;//Get the URL of the cocktail image
+
+                    const header = document.createElement('h3'); // Create an h3 element to display the cocktail's name.
+                    header.innerText = name; // Set the text content of the h3 element to the cocktail's name.
+                    cocktailSection.appendChild(header); // Add the h3 element to the specified section on the page (cocktailSection).
+                    const image = document.createElement('img'); // Create an img element to display the cocktail's image.
+                    image.src = imgURL; // Set the src attribute of the img element to the URL of the cocktail's image.
+                    image.alt = name + " image"; // Set the alt attribute of the img element for alternative text display.
+                    cocktailSection.appendChild(image); // Add the img element to the specified section on the page (cocktailSection).
+        });
+    }
+}
+
+        const fetchSeafoodData = () => { // Define a function named fetchSeafoodData using arrow function syntax.
+            fetch(seafoodURL) // Initiate a network request to the seafoodURL using the fetch API.
+               .then(response => response.json()) // Extract JSON data from the response.
+               .then(data => displaySeafood(data)); // Call the displaySeafood function with the extracted data.
+}
+
+        const displaySeafood = (data) => { // Define a function named displaySeafood with a parameter named data.
+             const seafoodMeals = data.meals; // Extract the meals property from the provided data, which contains seafood meal information.
+             if (seafoodMeals) { // Check if the seafoodMeals array exists to prevent errors from empty data.
+                   seafoodMeals.forEach(seafoodMeal => { // Iterate through each element in the seafoodMeals array, representing a seafood meal.
+                   const name = seafoodMeal.strMeal; // Retrieve the name of the seafood meal.
+                   const imgURL = seafoodMeal.strMealThumb; // Get the URL of the seafood meal's image.
+
+                   const header = document.createElement('h3'); // Create an h3 element to display the name of the seafood meal.
+                   header.innerText = name; // Set the text content of the h3 element to the seafood meal's name.
+                   cocktailSection.appendChild(header); // Add the h3 element to the specified section on the page (cocktailSection).
+
+                   const image = document.createElement('img'); // Create an img element to display the image of the seafood meal.
+                   image.src = imgURL; // Set the src attribute of the img element to the URL of the seafood meal's image.
+                   image.alt = name + " image"; // Set the alt attribute of the img element for alternative text display.
+                   cocktailSection.appendChild(image); // Add the img element to the specified section on the page (cocktailSection).
+        });
+    }
+}
+
+         const fetchRandomMeal = () => { // Define a function named fetchRandomMeal using arrow function syntax.
+            fetch(randomMealURL) // Initiate a network request to the randomMealURL using the fetch API.
+               .then(response => response.json()) // Extract JSON data from the response.
+               .then(data => displayRandomMeal(data)); // Call the displayRandomMeal function with the extracted data.
+}
+
+         const displayRandomMeal = (data) => { // Define a function named displayRandomMeal with a parameter named data.
+              const meal = data.meals[0]; // Extract the first meal object from the meals property of the provided data.
+              if (meal) { // Check if the meal object exists to prevent errors from empty data.
+                  const name = meal.strMeal; // Retrieve the name of the meal.
+                  const imgURL = meal.strMealThumb; // Get the URL of the meal's image.
+
+                  const header = document.createElement('h3'); // Create an h3 element to display the name of the meal.
+                  header.innerText = name; // Set the text content of the h3 element to the meal's name.
+                  cocktailSection.appendChild(header); // Add the h3 element to the specified section on the page (cocktailSection).
+
+                  const image = document.createElement('img'); // Create an img element to display the image of the meal.
+                  image.src = imgURL; // Set the src attribute of the img element to the URL of the meal's image.
+                  image.alt = name + " image"; // Set the alt attribute of the img element for alternative text display.
+                  cocktailSection.appendChild(image); // Add the img element to the specified section on the page (cocktailSection).
+    }
+}
+
+           triggerButton.addEventListener("click", fetchCocktailData); // Add a click event listener to the triggerButton, calling the fetchCocktailData function when clicked.
+           listByLetterButton.addEventListener("click", listByLetter); // Add a click event listener to the listByLetterButton, calling the listByLetter function when clicked.
+           seafoodButton.addEventListener("click", fetchSeafoodData); // Add a click event listener to the seafoodButton, calling the fetchSeafoodData function when clicked.
+
+    </script>
 </body>
 
 </html>
-
-
-
-
-
