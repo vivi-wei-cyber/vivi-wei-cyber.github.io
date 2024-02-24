@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>🤖Vivi's Mood Communication Robot🤖 </title>
+<H1>🤖Vivi's Mood Communication Robot🤖</H1>
+<link rel="stylesheet" href="style.css" />
+</head>
+
+   <p>This is 🐱 custom number emotional communication 🤖. 🤖 can explore your emotions 🥲 in a conversation with 😄 and a guide to your life 🧭 to provide you with moody advice 😁 with solutions ❤️❤️❤️!</p> 
+
+<div class="column2">      
+    <!-- 本地图片路径替换为实际路径 -->
+    
+    <img src="./2.png" alt="Local Image" width="100%">
+  </div>
+</div>
+<div class="container">
+  <div class="column1">
+      <p>💥💥💥💥💥💥💥I created this Emotional Conversation 🤖 to complete the exploration of my own emotions 🌍. ✅Through the conversation with the robot 💭, I 🐶was able to perceive my emotions clearly ❤️, which enabled me to control my emotions better. In the process of communicating with 🤖, I bring out the joys and sorrows 😄😢😠😊 and the uncertainty of being lost 😕 through fun interactions 😆😆😆😆😆😆 , making yourself the master of your 🥲 emotions. 🐻🐻🐻🐻🐻🐻🐻🐻.</p>
+      <p>💥💥💥💥💥💥💥From a guessing animal 🐒🐶🦎 type of bot, to an emotion 🥲 communicating bot, I changed a lot of the logic of the code 🇺🇸, including adding a different number of nodes, 🚨🚨🚨various interactions for Yes Button experiential insertion of images, I would like to add API images 🎆 or other links to enrich the robot's functionality 🎵 in future robot building.</p>
+      <p>💥💥💥💥💥💥💥😯I encountered five main challenges while building the bot 🐶: 🐻 How to insert pictures into python code, 🧌 Picture and text at the same time during the interaction. 🐻 Spaces in python syntax, which is different from other code, python is a language with very strict space logic 🌧️. 🐻 When building a bot, all questions 🙋 with elements should be logical, not too wordy or too many leaps in logic 🐰 that the user can't keep up. 🐻 When adding any node, the node logic must refer to the correct 🙆 Otherwise it is easy to check for errors when debugging. 🐻 The "yes" callback system must be discussed case by case 💨 in terms of being able to show the different functions of the node yes✅ buttons for different issues 🔘.</p>
+      <p>💥💥💥💥💥💥💥My takeaways ⛽️ : This is my third time learning the concept of arrays 🌈 I now have a good understanding of arrays and can read code. This is my  2️⃣ second exposure to python and I understand the importance of whitespace😐 for python code, which helps me to learn touch designer🐶 and gives me a solid foundation for my subsequent studies. In various programming languages, I have learned how to insert images 📷 into them, which is also another challenge for me. </p>
+      <p>💥💥💥💥💥💥💥In this build of the robot: the program involves creating a new View class for these three specific buttons, which does not contain any buttons 🔘🔘🤔, and the view class is needed for all three buttons to create the same answer thing.In this build of Robot🤖: the program involves creating a new View class for these three specific buttons, which does not contain any buttons 🔘🔘🤔, and all three buttons create the same answer thing, which requires the view class.Learning 📑 a day of programming now I'm going to bed! 😴😴😴😴😴😴😴😴</p>
+      <p>📒📒📒📒📒📒📒Code Analysis: A Node class is defined to represent each question and answer node. Each node has a VALUE (question or statement), an ANSWER (answer or feedback), and a list of CHILDREN, which contains the node's children, indicating possible follow-up questions or paths.</p>
+      <p>🐶🐶🐶🐶🐶🐶🐶Multiple instances of nodes are created using the Node class and these nodes are connected to each other through their children attribute to form a quiz tree. This tree is used to navigate different quiz paths based on the user's choices.</p>
+      <p>🐱🐱🐱🐱🐱🐱🐱Use the View and Button classes in discord.ui to create interactive interfaces. 🌛GuessOptionView and WrongView inherit from View and are used to display questions and options.🌞 GuessButton, YesButton, MaybeButton and WrongButton inherit from Button and are used to handle user click events.
+        🌛GuessOptionView displays the children of the current node as button options.
+        ❌WrongView displays the options in case the user selects the wrong answer.
+        ✅YesButton, MaybeButton and WrongButton are materialized as specific actions such as Confirm, Maybe and Error.</p>
+      <p>🔒🔒🔒🔒🔒🔒🔒FeedbackModal inherits from Modal and is used to collect user feedback under certain conditions. It contains a number of text input fields where the user can enter feedback. </p>
+      <p>🔥🔥🔥🔥🔥🔥🔥Initialize the Discord client and set the necessary intents to handle the message content.
+        通过@client.event装饰器定义了事件处理器 e.g. on_ready is triggered when bot logs in and on_message is triggered when a new message is received.
+        In the on_message event, the message content is examined and the appropriate questions and options are sent to the user based on a specific command (e.g. $My pet ).</p>
+    </div>
+
+  <div class="column2">
+      <!-- 本地视频路径替换为实际路径 -->
+      <video width="100%" height="auto" controls>
+          <source src="./C.mov" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+  </div>
+</html>
